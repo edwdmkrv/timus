@@ -4,8 +4,8 @@
 # $2 - BINTRAY_API_KEY
 
 baseurl='https://api.bintray.com/content'
-project='print_ip'
-name='print_ip'
+project='timus'
+name='timus'
 version="0.0.$1"
 user='edwdmkrv'
 params=';deb_distribution=xenial;deb_component=main;deb_architecture=amd64;publish=1'
