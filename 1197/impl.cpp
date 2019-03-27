@@ -20,7 +20,7 @@ constexpr int num(int const x, int const y) {
 }
 
 int main() try {
-	int x{}, y{};
+	int x{};
 	unsigned n{};
 
 	std::cin.exceptions(std::istream::badbit);
