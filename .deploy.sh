@@ -42,6 +42,10 @@ while test "$attempt" -lt "$attempts"; do
 	if test x"$failed" != x"$components"; then
 		attempt='0'
 		components="$failed"
+
+		if test -n "$failed"; then
+			echo 'Some components uploaded successfully, the attempt counter is reset'
+		fi
 	fi
 
 	failed=''
@@ -50,5 +54,5 @@ while test "$attempt" -lt "$attempts"; do
 		break
 	fi
 
-	echo 'Trying to upload again the next items: '"$components"
+	echo 'Trying to upload again the next items (attempt '"$attempt"'): '"$components"
 done
