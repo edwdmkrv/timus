@@ -32,7 +32,7 @@ while test "$attempt" -lt "$attempts"; do
 		if test "$rc" -eq 0; then
 			echo 'Uploaded successfully'
 		else
-			echo 'Upload failed"
+			echo 'Upload failed'
 			echo 'Items to try to upload again: '"$failed"
 		fi
 	done
