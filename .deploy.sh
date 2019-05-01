@@ -19,21 +19,20 @@ while test "$attempt" -lt "$attempts"; do
 	for component in $components; do
 		package="${name}-${component}_${version}_amd64.deb"
 
+		echo
 		echo 'Uploading '"$component"
  
 		curl -s -D '/dev/stdout' -T "$package" -u "${user}:$2" "$baseurl/$user/$project/$name/$version/pool/main/${name::1}/$name/$package$params" | grep -q -E 'HTTP/.* 20. .reated'
 		rc=$?
 
-		echo
+		if test $rc -ne 0; then
+			failed="$failed $component"
+		fi
 
 		if test "$rc" -eq 0; then
 			echo 'Uploaded successfully'
 		else
-			echo 'Upload failed'
-		fi
-
-		if test $rc -ne 0; then
-			failed="$failed $component"
+			echo 'Upload failed. Current reupload list: '"$failed"
 		fi
 	done
 
