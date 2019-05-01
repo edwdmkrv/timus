@@ -33,6 +33,8 @@ while test "$attempt" -lt "$attempts"; do
 		components="$failed"
 	fi
 
+	failed=''
+
 	if test -z "$components"; then
 		break
 	fi
