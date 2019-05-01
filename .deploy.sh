@@ -20,8 +20,12 @@ while test "$attempt" -lt "$attempts"; do
 		package="${name}-${component}_${version}_amd64.deb"
 
 		curl -T "$package" -u "${user}:$2" "$baseurl/$user/$project/$name/$version/pool/main/${name::1}/$name/$package$params"
+		rc=$?
 
-		if test $? -ne 0; then
+		echo 'rc = '"$rc"
+		echo 'rc = '"$rc" 2>&1
+
+		if test $rc -ne 0; then
 			failed="$failed $component"
 		fi
 	done
