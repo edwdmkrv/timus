@@ -22,7 +22,8 @@ while test "$attempt" -lt "$attempts"; do
 		echo
 		echo 'Uploading '"$component"
  
-		curl -s -D '/dev/stdout' -T "$package" -u "${user}:$2" "$baseurl/$user/$project/$name/$version/pool/main/${name::1}/$name/$package$params" | grep -q -E 'HTTP/.* 20. .reated'
+		headers="`curl -s -D '/dev/stdout' -T "$package" -u "${user}:$2" "$baseurl/$user/$project/$name/$version/pool/main/${name::1}/$name/$package$params"`"
+		echo "$headers" | grep -q -E 'HTTP/.* 20. .reated'
 		rc=$?
 
 		if test $rc -ne 0; then
@@ -34,6 +35,8 @@ while test "$attempt" -lt "$attempts"; do
 		else
 			echo 'Upload failed'
 			echo 'Items to try to upload again: '"$failed"
+			echo 'HTTP headers:'
+			echo "$headers"
 		fi
 	done
 
