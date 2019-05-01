@@ -21,7 +21,7 @@ while test "$attempt" -lt "$attempts"; do
 
 		echo 'Uploading '"$component"
 
-		curl -T "$package" -u "${user}:$2" "$baseurl/$user/$project/$name/$version/pool/main/${name::1}/$name/$package$params"
+		(set -x; curl -T "$package" -u "${user}:$2" "$baseurl/$user/$project/$name/$version/pool/main/${name::1}/$name/$package$params")
 		rc=$?
 
 		echo
