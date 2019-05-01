@@ -20,8 +20,8 @@ while test "$attempt" -lt "$attempts"; do
 		package="${name}-${component}_${version}_amd64.deb"
 
 		echo 'Uploading '"$component"
-
-		(set -x; curl -v -T "$package" -u "${user}:$2" "$baseurl/$user/$project/$name/$version/pool/main/${name::1}/$name/$package$params")
+ 
+		curl -s -D '/dev/stdout' -T "$package" -u "${user}:$2" "$baseurl/$user/$project/$name/$version/pool/main/${name::1}/$name/$package$params"
 		rc=$?
 
 		echo
