@@ -8,8 +8,6 @@
 #include <algorithm>
 #include <vector>
 
-using std::literals::string_literals::operator "" s;
-
 int argc;
 char **argv;
 
