@@ -12,7 +12,7 @@ params=';deb_distribution=xenial;deb_component=main;deb_architecture=amd64;publi
 
 attempt='0'
 attempts='9'
-components='1000 1001 1073 1196 1197 1264 1293 1306 1409 1496 1545 1639 1785 1787 1820 1837 1864 1877 1880 2001 2012 2066'
+components='1000 1001 1073 1196 1197 1264 1293 1306 1409 1496 1545 1639 1785 1787 1820 1837 1864 1869 1877 1880 2001 2012 2066'
 failed=''
 
 while test "$attempt" -lt "$attempts"; do
