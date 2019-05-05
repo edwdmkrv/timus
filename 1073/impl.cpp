@@ -1,8 +1,4 @@
 #include <cstdlib>
-#include <cstdint>
-#include <iterator>
-#include <algorithm>
-#include <vector>
 #include <iostream>
 
 static unsigned num(unsigned const n) {
