@@ -17,11 +17,10 @@ int main() try {
 	unsigned const half {n / 2 + 1};
 	std::vector<uint32_t> data;
 
-	data.reserve(half + 1);
+	data.resize(half + 1);
 
 	for (; u < half; u++) {
-		data.emplace_back();
-		std::cin >> data.back();
+		std::cin >> data[u];
 	}
 
 	std::make_heap(std::begin(data), std::end(data));
