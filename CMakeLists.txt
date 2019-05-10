@@ -35,7 +35,7 @@ target_include_directories (testlib INTERFACE
 	"${CMAKE_SOURCE_DIR}"
 )
 
-foreach (target 1000 1001 1023 1073 1196 1197 1264 1293 1306 1409 1496 1545 1639 1785 1787 1820 1837 1864 1869 1877 1880 2001 2012 2066)
+foreach (target 1000 1001 1023 1073 1196 1197 1264 1293 1306 1355 1409 1496 1545 1639 1785 1787 1820 1837 1864 1869 1877 1880 2001 2012 2066)
 	add_executable ("timus-${target}" "${target}/impl.cpp")
 	add_executable ("test-${target}" "${target}/test.cpp")
 
